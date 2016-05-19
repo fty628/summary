@@ -44,7 +44,7 @@ public class QuickSort extends SortUtil {
 	}
 
 	public static <T extends Comparable<T>> void quicksort3(T[] source, boolean ascend) {
-		quicksort_3(source, 0, source.length - 1, ascend);
+		quicksort2(source, 0, source.length - 1, ascend);
 	}
 	/**
 	 * <pre>
@@ -64,7 +64,7 @@ public class QuickSort extends SortUtil {
 	 *  --------------------------------------------------------------------------------
 	 *</pre>
 	*/
-	public static <T extends Comparable<T>> void quicksort_3(T[] source, int fromIndex, int toIndex, boolean ascend) {
+	public static <T extends Comparable<T>> void quicksort2(T[] source, int fromIndex, int toIndex, boolean ascend) {
 		if (fromIndex < toIndex) {
 			T s = source[toIndex];
 			int i = fromIndex - 1;
@@ -74,8 +74,8 @@ public class QuickSort extends SortUtil {
 				}
 			}
 			exchange(source, ++i, toIndex);
-			quicksort_3(source, fromIndex, i - 1, ascend);
-			quicksort_3(source, i + 1, toIndex, ascend);
+			quicksort2(source, fromIndex, i - 1, ascend);
+			quicksort2(source, i + 1, toIndex, ascend);
 		}
 	}
 
